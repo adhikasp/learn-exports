@@ -1,5 +1,5 @@
 const mix = require('laravel-mix');
-
+const fs = require('fs');
 
 /*
  |--------------------------------------------------------------------------
@@ -13,11 +13,24 @@ const mix = require('laravel-mix');
  */
 
 mix.webpackConfig({
+  target: 'node',
+  output: { // make our template globally importable
+    library: 'compiledTemplates',
+    libraryTarget: 'umd',    
+    umdNamedDefine: true
+  },
   module: {
     rules: [
       {
         test: /\.stub$/i,
         use: 'raw-loader',
+      },
+      { 
+        test: require.resolve("./stubs/index.js"), 
+        use: [{
+            loader: 'expose-loader',
+            options: 'template'
+        }] 
       },
     ],
   },

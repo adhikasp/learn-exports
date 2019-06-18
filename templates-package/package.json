@@ -8,8 +8,13 @@
     "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "npm run development -- --watch"
   },
-  "devDependencies": {    
+  "devDependencies": {
     "cross-env": "^5.1",
-    "laravel-mix": "^4.0.14"
-  }    
+    "laravel-mix": "^4.0.14",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "dependencies": {
+    "expose-loader": "^0.7.5",
+    "raw-loader": "^3.0.0"
+  }
 }
