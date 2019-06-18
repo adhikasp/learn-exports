@@ -1,0 +1,9 @@
+class <MODEL>() {
+    //
+
+    private $prop = "\n"
+    /*
+        testing strange symbols
+        /([A-Z])\w+/
+    */    
+}
